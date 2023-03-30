@@ -1,0 +1,4 @@
+0 戴口罩
+1 沒戴口罩
+2 背景
+name_emotion_facemask_FinalVersion.py -> 可辨識人名(馬英九/周子瑜/其餘人)+情緒+是否配戴口罩
