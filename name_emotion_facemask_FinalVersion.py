@@ -18,14 +18,14 @@ text_obj={
 # 定義加入文字函式
 def putText(x,y,text,size=50,color=(255,255,255)):
     global img
-    fontpath = 'NotoSansTC-Regular.otf'            # 字型
+    fontpath = 'TrainingData/NotoSansTC-Regular.otf'            # 字型
     font = ImageFont.truetype(fontpath, size)      # 定義字型與文字大小
     imgPil = Image.fromarray(img)                  # 轉換成 PIL 影像物件
     draw = ImageDraw.Draw(imgPil)                  # 定義繪圖物件
     draw.text((x, y), text_obj[text], fill=color, font=font) # 加入文字
     img = np.array(imgPil)                         # 轉換成 np.array
 
-model = tf.keras.models.load_model('keras_model.h5', compile=False)  # 載入模型
+model = tf.keras.models.load_model('TrainingData/keras_model.h5', compile=False)  # 載入模型
 data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)          # 設定資料陣列
 
 def text(text):      # 建立顯示文字的函式
@@ -39,8 +39,8 @@ def text(text):      # 建立顯示文字的函式
     cv2.putText(img, text, org, fontFace, fontScale, color, thickness, lineType) # 放入文字
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()         # 啟用訓練人臉模型方法
-recognizer.read('face.yml')                               # 讀取人臉模型檔
-cascade_path = "haarcascade_frontalface_default.xml"  # 載入人臉追蹤模型
+recognizer.read('TrainingData/face.yml')                               # 讀取人臉模型檔
+cascade_path = "TrainingData/haarcascade_frontalface_default.xml"  # 載入人臉追蹤模型
 face_cascade = cv2.CascadeClassifier(cascade_path)        # 啟用人臉追蹤
 
 cap = cv2.VideoCapture(0)                                 # 開啟攝影機
