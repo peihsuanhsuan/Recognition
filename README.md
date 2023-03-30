@@ -4,3 +4,7 @@ TrainingData
 3. 除了訓練此兩個模型外，還有套用網路上通用的haarcascade_frontalface_default.xml。
 
 補充：NotoSansTC-Regular.otf 為字體之檔案，可忽略
+
+Result:
+1. 未戴口罩時，會偵測到情緒並顯示於視窗左側
+2. 人臉範圍會以綠色方框標註並在方框上方顯示文字，分為人名(或是Who are you?) + 是否佩戴口罩(有配戴者會顯示”ok~”；未配戴者會顯示” no mask!!”)
